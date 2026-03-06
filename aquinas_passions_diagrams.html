@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Aquinas on the Passions — Diagrams</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'EB Garamond', Georgia, serif;
+    background: #faf8f4;
+    color: #2c2c2c;
+    padding: 60px 40px;
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+
+  h1 {
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+    color: #1a1a1a;
+  }
+
+  .subtitle {
+    font-size: 15px;
+    color: #888;
+    font-style: italic;
+    margin-bottom: 60px;
+  }
+
+  .diagram {
+    margin-bottom: 70px;
+  }
+
+  .diagram-title {
+    font-size: 19px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #1a1a1a;
+  }
+
+  .diagram-caption {
+    font-size: 14px;
+    color: #777;
+    font-style: italic;
+    margin-bottom: 24px;
+    max-width: 700px;
+  }
+
+  /* Diagram 1: Four Departments */
+  .grid-2x2 {
+    display: grid;
+    grid-template-columns: 140px 1fr 1fr;
+    grid-template-rows: 50px 1fr 1fr;
+    gap: 0;
+    max-width: 620px;
+    margin: 0 auto;
+  }
+
+  .grid-2x2 .corner { background: transparent; }
+
+  .grid-2x2 .col-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 15px;
+    color: #555;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: 13px;
+  }
+
+  .grid-2x2 .row-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: #555;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .grid-2x2 .cell {
+    border: 1px solid #d4d0c8;
+    padding: 22px 18px;
+    text-align: center;
+  }
+
+  .cell-label {
+    font-size: 17px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 4px;
+  }
+
+  .cell-desc {
+    font-size: 13px;
+    color: #888;
+    font-style: italic;
+  }
+
+  .cell-highlight {
+    background: #f0ece4;
+  }
+
+  /* Diagram 2: The 11 Passions */
+  .passions-container {
+    display: flex;
+    gap: 40px;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  .passion-group {
+    flex: 1;
+    border: 1px solid #d4d0c8;
+    padding: 24px;
+  }
+
+  .passion-group-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .passion-group-object {
+    font-size: 12px;
+    color: #999;
+    font-style: italic;
+    margin-bottom: 18px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #e8e4dc;
+  }
+
+  .passion-pair {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+  }
+
+  .passion-pair:last-child { margin-bottom: 0; }
+
+  .passion-item {
+    font-size: 15px;
+    padding: 6px 14px;
+    border-radius: 3px;
+    min-width: 100px;
+    text-align: center;
+  }
+
+  .passion-good {
+    background: #e8efe8;
+    color: #3a5a3a;
+  }
+
+  .passion-evil {
+    background: #f0e8e4;
+    color: #6a3a3a;
+  }
+
+  .passion-solo {
+    background: #f0e8e4;
+    color: #6a3a3a;
+  }
+
+  .passion-arrow {
+    color: #bbb;
+    font-size: 18px;
+    margin: 0 8px;
+  }
+
+  .passion-condition {
+    font-size: 11px;
+    color: #aaa;
+    text-align: center;
+    margin-bottom: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* Diagram 3: Cognitive Penetrability */
+  .flow-diagram {
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .flow-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+  }
+
+  .flow-box {
+    border: 1px solid #d4d0c8;
+    padding: 14px 22px;
+    text-align: center;
+    min-width: 180px;
+    background: #fff;
+  }
+
+  .flow-box-label {
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  .flow-box-desc {
+    font-size: 12px;
+    color: #999;
+    font-style: italic;
+  }
+
+  .flow-box-highlight {
+    background: #f0ece4;
+    border-color: #c4bfb4;
+  }
+
+  .flow-arrow {
+    text-align: center;
+    color: #bbb;
+    font-size: 22px;
+    margin: 4px 0;
+  }
+
+  .flow-side-label {
+    font-size: 11px;
+    color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    margin-right: 16px;
+    text-align: center;
+  }
+
+  .flow-bracket {
+    display: flex;
+    align-items: stretch;
+  }
+
+  .flow-stack {
+    flex: 1;
+  }
+
+  .flow-note {
+    font-size: 12px;
+    color: #999;
+    font-style: italic;
+    text-align: center;
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
+
+  /* Diagram 4: Passivity & Control */
+  .two-col {
+    display: flex;
+    gap: 40px;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .col {
+    flex: 1;
+    border: 1px solid #d4d0c8;
+    padding: 24px;
+  }
+
+  .col-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .col-subtitle {
+    font-size: 12px;
+    color: #999;
+    font-style: italic;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e8e4dc;
+  }
+
+  .col-item {
+    font-size: 14px;
+    margin-bottom: 10px;
+    padding-left: 14px;
+    position: relative;
+    line-height: 1.45;
+  }
+
+  .col-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #ccc;
+  }
+
+  /* Diagram 5 */
+  .vol-spectrum {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .vol-row {
+    display: flex;
+    align-items: stretch;
+    margin-bottom: 0;
+  }
+
+  .vol-cell {
+    flex: 1;
+    border: 1px solid #d4d0c8;
+    padding: 18px 16px;
+    text-align: center;
+  }
+
+  .vol-cell + .vol-cell {
+    border-left: none;
+  }
+
+  .vol-label {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .vol-desc {
+    font-size: 12.5px;
+    color: #777;
+    font-style: italic;
+    line-height: 1.4;
+  }
+
+  .vol-example {
+    font-size: 12px;
+    color: #aaa;
+    margin-top: 8px;
+  }
+
+  .vol-bar {
+    display: flex;
+    max-width: 680px;
+    margin: 0 auto 8px;
+  }
+
+  .vol-bar-segment {
+    flex: 1;
+    height: 4px;
+  }
+
+  .vol-bar-left { background: #c8d8c8; }
+  .vol-bar-mid { background: #e0dcd4; }
+  .vol-bar-right { background: #dcc8c0; }
+
+  .vol-labels-row {
+    display: flex;
+    justify-content: space-between;
+    max-width: 680px;
+    margin: 0 auto 14px;
+    font-size: 11px;
+    color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  hr.section-break {
+    border: none;
+    border-top: 1px solid #e4e0d8;
+    margin: 50px 0;
+  }
+</style>
+</head>
+<body>
+
+<h1>Aquinas on the Passions</h1>
+<p class="subtitle">Diagrams based on Peter King, in Aquinas's Moral Theory (Cornell 1999), 101–132</p>
+
+<!-- DIAGRAM 1 -->
+<div class="diagram">
+  <p class="diagram-title">1. The Four Departments of the Soul</p>
+  <p class="diagram-caption">Psychological experience divides along two cross-cutting axes: intellective vs. sensitive, and cognitive vs. appetitive.</p>
+
+  <div class="grid-2x2">
+    <div class="corner"></div>
+    <div class="col-header">Cognitive</div>
+    <div class="col-header">Appetitive</div>
+
+    <div class="row-header">Intellective</div>
+    <div class="cell">
+      <div class="cell-label">Intellect</div>
+      <div class="cell-desc">thinking, reasoning</div>
+    </div>
+    <div class="cell">
+      <div class="cell-label">Will</div>
+      <div class="cell-desc">volition, choice</div>
+    </div>
+
+    <div class="row-header">Sensitive</div>
+    <div class="cell">
+      <div class="cell-label">Sensing</div>
+      <div class="cell-desc">sensation, perception</div>
+    </div>
+    <div class="cell cell-highlight">
+      <div class="cell-label">Passions</div>
+      <div class="cell-desc">the 11 passions of the soul</div>
+    </div>
+  </div>
+</div>
+
+<hr class="section-break">
+
+<!-- DIAGRAM 2 -->
+<div class="diagram">
+  <p class="diagram-title">2. The Eleven Passions</p>
+  <p class="diagram-caption">Passions are individuated by their formal objects. Concupiscible passions respond to good and evil simply; irascible passions respond to the arduous — good or evil that is difficult to attain or avoid.</p>
+
+  <div class="passions-container">
+    <div class="passion-group">
+      <div class="passion-group-title">Concupiscible</div>
+      <div class="passion-group-object">Formal object: good/evil simply</div>
+
+      <div class="passion-condition">good or evil, considered absolutely</div>
+      <div class="passion-pair">
+        <span class="passion-item passion-good">Love</span>
+        <span class="passion-arrow">⟷</span>
+        <span class="passion-item passion-evil">Hate</span>
+      </div>
+
+      <div class="passion-condition" style="margin-top:14px;">good or evil, absent</div>
+      <div class="passion-pair">
+        <span class="passion-item passion-good">Desire</span>
+        <span class="passion-arrow">⟷</span>
+        <span class="passion-item passion-evil">Aversion</span>
+      </div>
+
+      <div class="passion-condition" style="margin-top:14px;">good or evil, present</div>
+      <div class="passion-pair">
+        <span class="passion-item passion-good">Joy</span>
+        <span class="passion-arrow">⟷</span>
+        <span class="passion-item passion-evil">Sorrow</span>
+      </div>
+    </div>
+
+    <div class="passion-group">
+      <div class="passion-group-title">Irascible</div>
+      <div class="passion-group-object">Formal object: the arduous good/evil</div>
+
+      <div class="passion-condition">arduous good, absent</div>
+      <div class="passion-pair">
+        <span class="passion-item passion-good">Hope</span>
+        <span class="passion-arrow">⟷</span>
+        <span class="passion-item passion-evil">Despair</span>
+      </div>
+
+      <div class="passion-condition" style="margin-top:14px;">arduous evil, absent</div>
+      <div class="passion-pair">
+        <span class="passion-item passion-good">Confidence</span>
+        <span class="passion-arrow">⟷</span>
+        <span class="passion-item passion-evil">Fear</span>
+      </div>
+
+      <div class="passion-condition" style="margin-top:14px;">arduous evil, present</div>
+      <div class="passion-pair">
+        <span class="passion-item passion-solo">Anger</span>
+        <span class="passion-arrow" style="visibility:hidden;">⟷</span>
+        <span class="passion-item" style="visibility:hidden;">—</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="section-break">
+
+<!-- DIAGRAM 3 -->
+<div class="diagram">
+  <p class="diagram-title">3. How Reason Controls the Passions</p>
+  <p class="diagram-caption">The cogitative power ("particular reason") mediates between intellect and sensitive appetite. It draws singular conclusions from universal propositions, making the passions cognitively penetrable.</p>
+
+  <div class="flow-diagram">
+    <div class="flow-bracket">
+      <div class="flow-side-label">Intellective</div>
+      <div class="flow-stack">
+        <div class="flow-row">
+          <div class="flow-box">
+            <div class="flow-box-label">Universal Reason</div>
+            <div class="flow-box-desc">intellect — universal propositions</div>
+          </div>
+        </div>
+        <div class="flow-note">"All lions eat human beings"</div>
+      </div>
+    </div>
+
+    <div class="flow-arrow">↓</div>
+
+    <div class="flow-bracket">
+      <div class="flow-side-label" style="letter-spacing:0;">Mediating</div>
+      <div class="flow-stack">
+        <div class="flow-row">
+          <div class="flow-box flow-box-highlight">
+            <div class="flow-box-label">Particular Reason</div>
+            <div class="flow-box-desc">cogitative power — singular conclusions</div>
+          </div>
+        </div>
+        <div class="flow-note">"This lion eats human beings" → triggers fear</div>
+      </div>
+    </div>
+
+    <div style="display:flex; justify-content:center; gap:80px; margin: 4px 0;">
+      <div class="flow-arrow">↗</div>
+      <div class="flow-arrow">↓</div>
+    </div>
+
+    <div class="flow-bracket">
+      <div class="flow-side-label">Sensitive</div>
+      <div class="flow-stack">
+        <div style="display:flex; gap:16px; justify-content:center;">
+          <div class="flow-box" style="min-width:140px;">
+            <div class="flow-box-label">Sensing</div>
+            <div class="flow-box-desc">external senses</div>
+          </div>
+          <div class="flow-box" style="min-width:140px;">
+            <div class="flow-box-label">Imagination</div>
+            <div class="flow-box-desc">phantasms</div>
+          </div>
+          <div class="flow-box" style="min-width:180px; background:#f0ece4; border-color:#c4bfb4;">
+            <div class="flow-box-label">Sensitive Appetite</div>
+            <div class="flow-box-desc">the passions</div>
+          </div>
+        </div>
+        <div class="flow-note" style="margin-top:8px;">"This is a lion" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; → fear, flight</div>
+      </div>
+    </div>
+
+    <div style="max-width:500px; margin: 20px auto 0; padding: 14px 18px; border: 1px dashed #d4d0c8; background: #fdfcfa;">
+      <p style="font-size:13px; color:#888; text-align:center;">Reason rules the passions <em>"with a politic rule"</em> — not as a master over slaves, but as a ruler over free citizens who mostly follow advice but can resist.</p>
+    </div>
+  </div>
+</div>
+
+<hr class="section-break">
+
+<!-- DIAGRAM 4 -->
+<div class="diagram">
+  <p class="diagram-title">4. Passivity ≠ Loss of Control</p>
+  <p class="diagram-caption">King identifies two fallacies about passivity that Aquinas's theory avoids.</p>
+
+  <div class="two-col">
+    <div class="col">
+      <div class="col-title">Fallacy 1</div>
+      <div class="col-subtitle">"Passivity means we are at the mercy of our passions"</div>
+      <div class="col-item">Passions are passive potencies — actualized by external principles</div>
+      <div class="col-item">But: the sensitive appetite is a <em>part</em> of the soul, not the whole</div>
+      <div class="col-item">The will (intellective appetite) is a co-cause of the soul's overall state</div>
+      <div class="col-item">Analogy: a wound to the hand doesn't cause the rest of the body to be wounded</div>
+    </div>
+    <div class="col">
+      <div class="col-title">Fallacy 2</div>
+      <div class="col-subtitle">"Passivity means the passions are involuntary"</div>
+      <div class="col-item">Actions from passions satisfy both conditions for voluntariness: internal principle + known end</div>
+      <div class="col-item">The will must <em>consent</em> to a passion for it to serve as basis for action</div>
+      <div class="col-item">Exception: when passion literally overwhelms reason (rare) — reduces humans to level of brute animals</div>
+      <div class="col-item">Ordinarily: agent "goes along" with passion, retaining free judgment</div>
+    </div>
+  </div>
+</div>
+
+<hr class="section-break">
+
+<!-- DIAGRAM 5 -->
+<div class="diagram">
+  <p class="diagram-title">5. Passion, Voluntariness, and Moral Responsibility</p>
+  <p class="diagram-caption">Actions done from passion range from fully voluntary to (rarely) non-voluntary. The type of passion matters for culpability.</p>
+
+  <div class="vol-bar">
+    <div class="vol-bar-segment vol-bar-left"></div>
+    <div class="vol-bar-segment vol-bar-mid"></div>
+    <div class="vol-bar-segment vol-bar-right"></div>
+  </div>
+  <div class="vol-labels-row">
+    <span>fully voluntary</span>
+    <span>involuntary in a respect</span>
+    <span>non-voluntary</span>
+  </div>
+
+  <div class="vol-row">
+    <div class="vol-cell">
+      <div class="vol-label">Concupiscence</div>
+      <div class="vol-desc">Simply voluntary — the agent wills what he would will in other circumstances too</div>
+      <div class="vol-example">No extenuating circumstances</div>
+    </div>
+    <div class="vol-cell">
+      <div class="vol-label">Fear / Anger</div>
+      <div class="vol-desc">Voluntary, but involuntary <em>secundum quid</em> — the agent would not so choose apart from the passion</div>
+      <div class="vol-example">Captain jettisons cargo in storm; Jones strikes Smith when provoked</div>
+    </div>
+    <div class="vol-cell">
+      <div class="vol-label">Overwhelming passion</div>
+      <div class="vol-desc">Reason "totally devoured" — no movement of will; the human is reduced to brute animal</div>
+      <div class="vol-example">Blind rage — <em>actiones hominis</em>, not <em>actiones humanae</em></div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
